@@ -1,0 +1,59 @@
+[
+  {
+    "id": "361",
+    "img": "assets/images/user/user1.jpg",
+    "room_number": "111",
+    "room_type": "Average",
+    "no_of_beds": "1",
+    "amount_per_night": 10000,
+    "floor": "2",
+    "capacity": "5",
+    "occupied": "Yes"
+    
+  },
+  {
+    "id": "002",
+    "img": "assets/images/user/user2.jpg",
+    "room_number": "002",
+    "room_type": "Exquisite",
+    "no_of_beds": "2",
+    "amount_per_night": 40000,
+    "floor": "6",
+    "capacity": "3",
+    "occupied": "No"
+  },
+  {
+    "id": "033",
+    "img": "assets/images/user/user3.jpg",
+    "room_number": "323",
+    "room_type": "Exquisite",
+    "no_of_beds": "1",
+    "amount_per_night": 20000,
+    "floor": "2",
+    "capacity": "1",
+    "occupied": "Yes"
+  },
+  {
+    "id": "104",
+    "img": "assets/images/user/user4.jpg",
+    "room_number": "004",
+    "room_type": "Good",
+    "no_of_beds": "4",
+    "amount_per_night": "15000",
+    "floor": "4",
+    "capacity": "4",
+    "occupied": "No"
+  },
+  {
+    "id": "005",
+    "img": "assets/images/user/user5.jpg",
+    "room_number": "015",
+    "room_type": "Average",
+    "no_of_beds": "1",
+    "amount_per_night": "10000",
+    "floor": "2",
+    "capacity": "3",
+    "occupied": "Yes"
+  }
+  
+]

@@ -1,0 +1,45 @@
+[
+    {
+      "id": "001",
+      "img": "assets/images/user/user1.jpg",
+      "name": "Taye Taiwo",
+      "email": "taiwo@gmail.com",
+      "mobile": "09033454354",
+      "address": "Ikeja"
+      
+    },
+    {
+        "id": "091",
+        "img": "assets/images/user/user1.jpg",
+        "name": "Makujuola Muyiwa",
+        "email": "muyiwa@gmail.com",
+        "mobile": "09035443646",
+        "address": "Kano"
+    },
+    {
+        "id": "049",
+        "img": "assets/images/user/user1.jpg",
+        "name": "Dennis Love",
+        "email": "love@gmail.com",
+        "mobile": "090345654654",
+        "address": "Lagos"
+    },
+    {
+        "id": "021",
+        "img": "assets/images/user/user1.jpg",
+        "name": "Omolola Kolade",
+        "email": "kolade@gmail.com",
+        "mobile": "09038678674",
+        "address": "Oyo"
+    },
+    {
+        "id": "111",
+        "img": "assets/images/user/user1.jpg",
+        "name": "Mark Ten",
+        "email": "tem@gmail.com",
+        "mobile": "09034565486",
+        "address": "Ibadan"
+    }
+    
+  ]
+  
