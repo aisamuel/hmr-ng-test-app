@@ -1,51 +1,27 @@
 import { RouteInfo } from './sidebar.metadata';
 export const ROUTES: RouteInfo[] = [
   {
-    path: '',
-    title: 'Hotel',
+    path: 'patient',
+    title: 'Patient List',
     iconType: 'material-icons-two-tone',
-    icon: 'people_alt',
+    icon: 'threeusers',
+    // icon: 'fas fa-users',
     class: 'menu-toggle',
     groupTitle: false,
     badge: '',
     badgeClass: '',
-    submenu: [
-      {
-        path: '/rooms/customers',
-        title: 'Customers',
-        iconType: '',
-        icon: '',
-        class: 'ml-menu',
-        groupTitle: false,
-        badge: '',
-        badgeClass: '',
-        submenu: [],
-      },
-      {
-        path: '/rooms/rooms',
-        title: 'Hotel Rooms',
-        iconType: '',
-        icon: '',
-        class: 'ml-menu',
-        groupTitle: false,
-        badge: '',
-        badgeClass: '',
-        submenu: [],
-      },
-      {
-        path: '/rooms/books',
-        title: 'Book',
-        iconType: '',
-        icon: '',
-        class: 'ml-menu',
-        groupTitle: false,
-        badge: '',
-        badgeClass: '',
-        submenu: [],
-      },
-      
-      
-    ],
+    submenu: [ ],
+  },
+  {
+    path: 'patient/patient-create',
+    title: 'Register Patient',
+    iconType: 'material-icons-two-tone',
+    icon: 'adduser',
+    class: 'menu-toggle',
+    groupTitle: false,
+    badge: '',
+    badgeClass: '',
+    submenu: [ ],
   },
  
 ];

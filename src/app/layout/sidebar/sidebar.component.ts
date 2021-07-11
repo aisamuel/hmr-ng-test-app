@@ -8,6 +8,8 @@ import {
   HostListener
 } from '@angular/core';
 import { ROUTES } from './sidebar-items';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -25,8 +27,31 @@ export class SidebarComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
-    public elementRef: ElementRef
-  ) {}
+    public elementRef: ElementRef,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIcon(
+      "threeusers",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/three_users.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "adduser",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/add_user.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "search",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/Search.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "notification",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/notify.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "step1",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/step1.svg")
+    );
+  }
   @HostListener('window:resize', ['$event'])
   windowResizecall(event) {
     this.setMenuHeight();

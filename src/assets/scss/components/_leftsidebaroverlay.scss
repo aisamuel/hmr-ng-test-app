@@ -24,13 +24,13 @@
 .sidebar {
   @include transition(all 0.5s);
   font-family: $sidebar-font-family;
-  background: #ffffff;
+  background: #06207A;
   width: 260px;
   overflow: hidden;
   display: inline-block;
-  height: calc(100vh - 60px);
+  // height: calc(100vh - 60px);
   position: fixed;
-  top: 60px;
+  top: 0px;
   left: 0;
   border-right: 1px solid #f2f4f9;
   -webkit-box-shadow: 0 8px 10px 0 rgba(183, 192, 206, 0.2);
@@ -140,7 +140,8 @@
 
       .active {
         .menu-toggle {
-          background: #e4e8f3;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
         }
 
         .ml-menu {
@@ -161,18 +162,19 @@
         }
 
         &:before {
-          content: '+';
+          // content: '+';
           @include transform(scale(1));
         }
 
         &:after {
-          content: '\2013';
+          // content: '\2013';
           @include transform(scale(0));
         }
       }
 
       .material-icons-two-tone {
         vertical-align: middle;
+        color: #FFFFFF;
         filter: invert(43%) sepia(4%) saturate(19%) hue-rotate(342deg) brightness(94%) contrast(88%);
       }
 
@@ -245,10 +247,15 @@
 
         span {
           margin: 7px 0 7px 12px;
-          color: #333;
-          // font-weight: bold;
-          font-size: 14px;
           overflow: hidden;
+          font-family: Silka;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+          /* identical to box height */
+          color: #FCFDFE;
+
         }
       }
 
@@ -573,6 +580,7 @@
     }
 
     .material-icons-two-tone {
+      color: white;
       filter: invert(99%) sepia(95%) saturate(4461%) hue-rotate(181deg) brightness(134%) contrast(83%);
     }
 
@@ -614,7 +622,7 @@
 
   .image {
     width: 35%;
-    max-width: 75px;
+    max-width: 50px;
     margin: 0 auto;
 
     img {
@@ -630,10 +638,13 @@
   // border: 1px solid rgba(52, 73, 94, 0.44);
   padding: 2px;
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 .img-circle {
-  border-radius: 15%;
+  border-radius: 50%;
+  margin-bottom: 80px;
 }
 
 .profile-usertitle {

@@ -2,16 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+    path: 'patient',
+    loadChildren: () => import('./patient/patient.module').then(m => m.PatientModule)
   },
-  {
-    path: 'rooms',
-    loadChildren: () =>
-      import('./rooms/rooms.module').then(m => m.RoomsModule)
-  },
-  
   {
     path: 'authentication',
     loadChildren: () =>

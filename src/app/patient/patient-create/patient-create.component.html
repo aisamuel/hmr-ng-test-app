@@ -1,0 +1,491 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Register Patient</h4>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Basic Example | Horizontal Layout -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="">
+                    <div class="header">
+                        <!-- <h2>
+                            <strong>Horizontal</strong> Layout (archwizard)</h2> -->
+                        <!-- <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="#" onClick="return false;" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li>
+                                        <a href="#" onClick="return false;">Action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">Another action</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onClick="return false;">Something else here</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class="body">
+                        <aw-wizard #wizard [navBarLayout]="'large-empty-symbols'">
+                            <aw-wizard-step [stepTitle]="'Patient Details'">
+                                <ng-template awWizardStepSymbol><span>1</span></ng-template>
+                                <div class="centered-content">
+                                    <div>
+                                        <form class="register-form m-4" [formGroup]="register" (ngSubmit)="onRegister()">
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Title</mat-label>
+                                                        <mat-select formControlName="title">
+                                                            <mat-option [value]="'Mr'">
+                                                                Mr
+                                                            </mat-option>
+                                                            <mat-option [value]="'Mrs'">
+                                                                Mrs
+                                                            </mat-option>
+                                                            <mat-option [value]="'Miss'">
+                                                                Miss
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('title').hasError('required')">
+                                                            Title is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Surname</mat-label>
+                                                        <input matInput formControlName="surname">
+                                                    
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient First Name</mat-label>
+                                                        <input matInput formControlName="first">
+                                                
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Middle Name</mat-label>
+                                                        <input matInput formControlName="middle">
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Phone Number</mat-label>
+                                                        <input matInput formControlName="phone">                                           
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Email</mat-label>
+                                                        <input matInput formControlName="email">
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Gender</mat-label>
+                                                        <mat-select formControlName="gender">
+                                                            <mat-option [value]="'Male'">
+                                                                Male
+                                                            </mat-option>
+                                                            <mat-option [value]="'Female'">
+                                                                Female
+                                                            </mat-option>                                                          
+                                                        </mat-select>
+                                                       
+                                                        <mat-error *ngIf="register.get('gender').hasError('required')">
+                                                            Gender is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                                        <mat-label>Date Of Birth (mm/dd/yy)</mat-label>
+                                                        <input matInput [matDatepicker]="picker" formControlName="dob">
+                                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                        <mat-datepicker #picker></mat-datepicker>
+                                                        <mat-error *ngIf="register.get('dob').hasError('required')">
+                                                            Please select date
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Address</mat-label>
+                                                        <textarea matInput formControlName="address"></textarea>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                           
+                                            
+                                            <div class="row text-right">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                                                    <button class="mr-3" [disabled]="!register.valid" mat-raised-button
+                                                        color="primary" awNextStep>Continue</button>
+                        
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- <div class="text-right button-demo">
+                                        <button class="btn btn-info btn-border-radius waves-effect"
+                                            [disabled]="!register.valid" awNextStep>Next</button>
+                                    </div> -->
+                                </div>
+                            </aw-wizard-step>
+                            <aw-wizard-step [stepTitle]="'Other'">
+                                <ng-template awWizardStepSymbol><span>2</span></ng-template>
+                                <div class="centered-content">
+                                    <div>
+                                        <form class="register-form m-4" [formGroup]="register" (ngSubmit)="onRegister()">
+                                            <div class="row">
+                                                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Ethnicity</mat-label>
+                                                        <mat-select formControlName="ethnicity">
+                                                            <mat-option [value]="'Yoruba'">
+                                                             Yoruba
+                                                            </mat-option>
+                                                            <mat-option [value]="'Igbo'">
+                                                                Igbo
+                                                            </mat-option>
+                                                            <mat-option [value]="'Hausa'">
+                                                                Hausa
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('ethnicity').hasError('required')">
+                                                            Ethnicity is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Religion</mat-label>
+                                                        <mat-select formControlName="religion">
+                                                            <mat-option [value]="'Christianity'">
+                                                                Christianity
+                                                            </mat-option>
+                                                            <mat-option [value]="'Islamic'">
+                                                                Islamic
+                                                            </mat-option>
+                                                            <mat-option [value]="'Traditional'">
+                                                                Traditional
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('religion').hasError('required')">
+                                                            Religion is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Marital Status</mat-label>
+                                                        <mat-select formControlName="marital">
+                                                            <mat-option [value]="'Married'">
+                                                                Married
+                                                            </mat-option>
+                                                            <mat-option [value]="'Single'">
+                                                                Single
+                                                            </mat-option>
+                                                            <mat-option [value]="'Divorced'">
+                                                                Divorced
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('marital').hasError('required')">
+                                                            Marital Status is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Occupation</mat-label>
+                                                        <input matInput formControlName="occupation">
+                                                    
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Blood Group</mat-label>
+                                                        <input matInput formControlName="blood">
+                                                
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Type</mat-label>
+                                                        <input matInput formControlName="type">
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Nationality</mat-label>
+                                                        <mat-select formControlName="nationality">
+                                                            <mat-option [value]="'Nigerian'">
+                                                                Nigerian
+                                                            </mat-option>
+                                                            <mat-option [value]="'Other Country'">
+                                                                Other Country
+                                                            </mat-option>
+                                                            
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('nationality').hasError('required')">
+                                                            Nationality is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>State of Origin</mat-label>
+                                                        <mat-select formControlName="origin">
+                                                            <mat-option [value]="'Oyo'">
+                                                                Oyo
+                                                            </mat-option>
+                                                            <mat-option [value]="'Lagos'">
+                                                                Lagos
+                                                            </mat-option>
+                                                            <mat-option [value]="'Kaduna'">
+                                                                Kaduna
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('origin').hasError('required')">
+                                                            State of Origin is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Local Government</mat-label>
+                                                        <mat-select formControlName="title">
+                                                            <mat-option [value]="'Oyo South'">
+                                                                Oyo South
+                                                            </mat-option>
+                                                            <mat-option [value]="'Ogbomosho South'">
+                                                                Ogbomosho South
+                                                            </mat-option>
+                                                            <mat-option [value]="'Ikirun'">
+                                                                Ikirun
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('government').hasError('required')">
+                                                            Local Government is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>State of Residence</mat-label>
+                                                        <mat-select formControlName="residence">
+                                                            <mat-option [value]="'Oyo'">
+                                                                Oyo
+                                                            </mat-option>
+                                                            <mat-option [value]="'Lagos'">
+                                                                Lagos
+                                                            </mat-option>
+                                                            <mat-option [value]="'Kaduna'">
+                                                                Kaduna
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('residence').hasError('required')">
+                                                            State of Residence is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                
+                                            </div>
+                                                                                        
+                                            <div class="row text-right">
+                                                
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                                                    <button class="mr-4" [disabled]="!register.valid" mat-raised-button
+                                                        color="primary" awPreviousStep>Back</button>
+                                                    <button class="mr-3" [disabled]="!register.valid" mat-raised-button
+                                                        color="primary" awNextStep>Continue</button>
+                        
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- <div class="text-right button-demo">
+                                        <button class="btn btn-danger btn-border-radius waves-effect"
+                                            awPreviousStep>Back</button>
+                                        <button class="btn btn-info btn-border-radius waves-effect"
+                                            [disabled]="!secondForm.valid" awNextStep>Next</button>
+                                    </div> -->
+                                </div>
+                            </aw-wizard-step>
+                            <aw-wizard-step [stepTitle]="'Next of Kin'">
+                                <ng-template awWizardStepSymbol><span>3</span></ng-template>
+                                <div class="centered-content">
+                                    <div>
+                                        <form class="register-form m-4" [formGroup]="register" (ngSubmit)="onRegister()">
+                                            <div class="row">
+                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Full Name</mat-label>
+                                                        <input matInput formControlName="nname">
+                                                    
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Relationship</mat-label>
+                                                        <mat-select formControlName="relationship">
+                                                            <mat-option [value]="'Mother'">
+                                                                Mother
+                                                            </mat-option>
+                                                            <mat-option [value]="'Father'">
+                                                                Father
+                                                            </mat-option>
+                                                            <mat-option [value]="'Siblings'">
+                                                                Siblings
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('relationship').hasError('required')">
+                                                            Relationship is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Phone Number</mat-label>
+                                                        <input matInput formControlName="nphone">
+                                                    
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Patient Address</mat-label>
+                                                        <textarea matInput formControlName="naddress"></textarea>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                            
+                                                                                        
+                                            <div class="row text-right">
+                                                
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                                                    <button class="mr-4" [disabled]="!register.valid" mat-raised-button
+                                                        color="primary" awPreviousStep>Back</button>
+                                                    <button class="mr-3" [disabled]="!register.valid" mat-raised-button
+                                                        color="primary" awNextStep>Continue</button>
+                        
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- <div class="text-right button-demo">
+                                        <button class="btn btn-danger btn-border-radius waves-effect"
+                                            awPreviousStep>Back</button>
+                                        <button class="btn btn-info btn-border-radius waves-effect"
+                                            [disabled]="!secondForm.valid" awNextStep>Next</button>
+                                    </div> -->
+                                </div>
+                            </aw-wizard-step>
+                            <aw-wizard-step [stepTitle]="'HMO'">
+                                <ng-template awWizardStepSymbol><span>4</span></ng-template>
+                                <div class="centered-content">
+                                    <div>
+                                        <form class="register-form m-4" [formGroup]="register" (ngSubmit)="onRegister()">
+                                            <div class="row">
+            
+                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                                                    <mat-form-field class="example-full-width" appearance="outline">
+                                                        <mat-label>Sponor Billing Policy</mat-label>
+                                                        <mat-select formControlName="billing">
+                                                            <mat-option [value]="'Yes'">
+                                                                Yes
+                                                            </mat-option>
+                                                            <mat-option [value]="'No'">
+                                                                No
+                                                            </mat-option>
+                                                            
+                                                        </mat-select>
+                                                    
+                                                        <mat-error *ngIf="register.get('billing').hasError('required')">
+                                                            Field is required
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                
+                        
+                                            </div>
+                    
+                                            
+                                                                                        
+                                            <div class="row text-right">
+                                                
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                                                    <button class="mr-4" [disabled]="!register.valid" mat-raised-button
+                                                        color="primary" awPreviousStep>Back</button>
+                                                    <button class="mr-3" (click)="success()"  mat-raised-button
+                                                        color="primary">Register Patient</button>
+                        
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </aw-wizard-step>
+                        </aw-wizard>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Basic Example | Horizontal Layout -->
+        <!-- Basic Example | Vertical Layout -->
+    
+    </div>
+</section>

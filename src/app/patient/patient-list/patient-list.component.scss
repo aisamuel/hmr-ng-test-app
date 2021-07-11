@@ -1,0 +1,40 @@
+.mr-3 {
+  // position: absolute;
+  
+  background: #F0F6FF;
+  border-radius: 8px;
+  font-family: Silka;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 12px;
+  /* identical to box height */
+  color: #537FE9;
+  height: auto;
+  width: auto;
+  margin-left: 10px;
+
+}
+.mat-header-cell {
+  font-family: Silka;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #727894;
+  background: #F9F9F9;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+mat-row, mat-footer-row {
+  display: flex;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-style: solid #F6F6F6;
+  padding-bottom: 18px;
+  padding-top: 18px;
+  align-items: center;
+  box-sizing: border-box;
+}

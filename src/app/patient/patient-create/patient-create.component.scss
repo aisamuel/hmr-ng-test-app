@@ -1,0 +1,33 @@
+.centered-content {
+    margin: 30px;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .mr-3 {
+    // position: absolute;
+    width: 280px;
+    height: 68px;
+    background: #2C61E4;
+    border-radius: 10px;
+  
+  }
+  
+  .mr-4 {
+    // position: absolute;
+    width: 216px;
+    height: 68px;
+    border: 1px solid #5E8CEE;
+    background-color: inherit;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Silka;
+    font-style: normal;
+    font-weight: 600;
+    color: #2C61E4;
+  
+  }
+  

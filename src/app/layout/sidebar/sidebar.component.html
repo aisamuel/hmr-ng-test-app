@@ -4,7 +4,7 @@
     <!-- Menu -->
     <div class="menu">
       <ul class="list"
-        [ngStyle]="{'position' : 'relative', 'max-height' : listMaxHeight+'px', 'max-width' : listMaxWidth+'px'}"
+        [ngStyle]="{'position' : 'relative',  'max-height' : listMaxHeight+'px', 'max-width' : listMaxWidth+'px'}"
         [perfectScrollbar]>
         <li class="sidebar-user-panel">
           <div class="user-panel">
@@ -13,44 +13,54 @@
             </div>
           </div>
           <div class="profile-usertitle">
-            <div class="sidebar-userpic-name">Hakeem Oriola </div>
-            <div class="profile-usertitle-job ">Hotel Manager </div>
+            <!-- <div class="sidebar-userpic-name">Hakeem Oriola </div>
+            <div class="profile-usertitle-job ">Hotel Manager </div> -->
           </div>
         </li>
         <!-- First level menu -->
         <li [class.active]="showMenu === sidebarItem.title" *ngFor="let sidebarItem of sidebarItems"
           [routerLinkActive]="sidebarItem.submenu.length != 0 ? '' : 'active'">
           <div class="header" *ngIf="sidebarItem.groupTitle === true">{{sidebarItem.title}}</div>
-          <a [routerLink]="sidebarItem.class === '' ? [sidebarItem.path] : null" *ngIf="!sidebarItem.groupTitle;"
+          <a [routerLink]="[sidebarItem.path]" *ngIf="!sidebarItem.groupTitle;"
             [ngClass]="[sidebarItem.class]" (click)="callMenuToggle($event, sidebarItem.title)">
-            <i [ngClass]="[sidebarItem.iconType]">{{sidebarItem.icon}}</i>
+            <!-- <i [ngClass]="[sidebarItem.iconType]" style="color: #FFFFFF;">{{sidebarItem.icon}}</i> -->
+            <mat-icon svgIcon="{{sidebarItem.icon}}"></mat-icon>
             <span class="hide-menu">{{sidebarItem.title}}
             </span>
             <span *ngIf="sidebarItem.badge != '' " [ngClass]="[sidebarItem.badgeClass]">{{sidebarItem.badge}}</span>
           </a>
           <!-- Second level menu -->
-          <ul class="ml-menu" *ngIf="sidebarItem.submenu.length > 0">
-            <li *ngFor="let sidebarSubItem of sidebarItem.submenu"
-              [class.activeSub]="showSubMenu === sidebarSubItem.title"
-              [routerLinkActive]="sidebarSubItem.submenu.length > 0 ? '' : 'active'">
-              <a [routerLink]="sidebarSubItem.submenu.length > 0 ? null : [sidebarSubItem.path]"
-                (click)="callSubMenuToggle(sidebarSubItem.title)" [ngClass]="[sidebarSubItem.class]">
-                {{sidebarSubItem.title}}
-              </a>
-              <!-- Third level menu -->
-              <ul class="collapse" *ngIf="sidebarSubItem.submenu.length > 0"
-                [ngClass]="{'in' : showSubMenu === sidebarSubItem.title }">
-                <li *ngFor="let sidebarSubsubItem of sidebarSubItem.submenu" [ngClass]="[sidebarSubsubItem.class]">
-                  <a [routerLink]="[sidebarSubsubItem.path]">
-                    {{sidebarSubsubItem.title}}
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          
         </li>
+        
+        <!-- <li [routerLinkActive]="active" class="ng-star-inserted active" style="bottom: 0; height: 10%;">
+          <a [routerLink]="forms/wizard" [ngClass]="menu-toggle" class="menu-toggle ng-star-inserted" href="#/forms/wizard">
+            <i [ngClass]="material-icons-two-tone" class="material-icons-two-tone">people_alt</i>
+            <span class="hide-menu">Register Patient </span>
+          </a>
+        </li> -->
+
+        <!-- <li [class.active]="true"
+          [routerLinkActive]="'active'">
+          <div class="header">Logout</div>
+          <a [routerLink]="" *ngIf="!false"
+            [ngClass]="[sidebarItem.class]" (click)="callMenuToggle($event, logout)">
+            
+          </a>
+         
+          
+        </li> -->
+        
       </ul>
     </div>
+    <!-- <ul class="list">
+      <li [routerLinkActive]="active" class="ng-star-inserted active" style="position: absolute; bottom: 0px; height: 10%;">
+        <a [routerLink]="forms/wizard" [ngClass]="menu-toggle" class="menu-toggle ng-star-inserted" href="#/forms/wizard">
+          <i [ngClass]="material-icons-two-tone" class="material-icons-two-tone">people_alt</i>
+          <span class="hide-menu">Register Patient </span>
+        </a>
+      </li>
+    </ul> -->
     <!-- #Menu -->
   </aside>
   <!-- #END# Left Sidebar -->

@@ -13,13 +13,6 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { DynamicScriptLoaderService } from './shared/services/dynamic-script-loader.service';
 import { ConfigService } from './shared/services/config.service';
 import { CalendarService } from '../app/apps/calendar/calendar.service';
-// import { ProfessorsService } from '../app/professors/all-professors/professors.service';
-// import { StudentsService } from '../app/students/all-students/students.service';
-// import { LibraryService } from '../app/library/all-assets/library.service';
-// import { DepartmentService } from '../app/departments/all-departments/department.service';
-// import { StaffService } from './staff/all-staff/staff.service';
-// import { HolidayService } from './holidays/all-holidays/holiday.service';
-// import { FeesService } from './fees/all-fees/fees.service';
 import { RightSidebarService } from './shared/services/rightsidebar.service';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {
@@ -110,14 +103,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     DynamicScriptLoaderService,
     ConfigService,
     RightSidebarService,
-    // ProfessorsService,
-    // StudentsService,
-    // LibraryService,
     CalendarService,
-    // DepartmentService,
-    // StaffService,
-    // HolidayService,
-    // FeesService,
   ],
   entryComponents: [
     SimpleDialogComponent,

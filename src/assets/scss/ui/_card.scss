@@ -4,8 +4,8 @@
  *  Description: This scss file for card style classes
  */
 .card {
-  background-color: #fff;
-  border-radius: 10px;
+  background: #FFFFFF;
+  border-radius: 12px 12px 12px 12px;
   border: none;
   position: relative;
   margin-bottom: 30px;
@@ -133,7 +133,7 @@
   .body {
     font-size: 14px;
     color: #555;
-    padding: 15px;
+    // padding: 15px;
 
     @for $i from 1 through 12 {
       .col-xs-#{$i},

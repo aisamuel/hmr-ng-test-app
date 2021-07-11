@@ -5,16 +5,41 @@
  */
 
 .txt1 {
-  font-family: Poppins, sans-serif;
-  font-size: 13px;
-  line-height: 1.4;
-  color: #555555;
+  font-family: Silka;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 149.3%;
+  /* identical to box height, or 24px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #DB3528;
+
+  opacity: 0.8;
 }
 .txt2 {
   font-family: Poppins, sans-serif;
   font-size: 13px;
   line-height: 1.4;
   color: #999999;
+}
+
+.txt3 {
+  font-family: Silka;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 149.3%;
+  /* identical to box height, or 30px */
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  color: #7D7D7D;
+
 }
 .size1 {
   width: 355px;
@@ -55,7 +80,7 @@
   flex-direction: row-reverse;
 }
 .login100-more {
-  width: calc(100% - 560px);
+  width: calc(100% - 660px);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -72,22 +97,36 @@
   top: 0;
   left: 0;
 }
+// .login100-form {
+//   width: 453px;
+//   display: inline-table;
+//   background-color: #f5f5f5;
+//   padding: 34px 55px;
+//   margin: 30px;
+//   border-radius: 20px;
+// }
 .login100-form {
-  width: 453px;
+  width: 553px;
   display: inline-table;
-  background-color: #f5f5f5;
-  padding: 34px 55px;
-  margin: 30px;
-  border-radius: 20px;
+  // background-color: #f5f5f5;
+  padding: 34px 10px;
+  // margin: 30px;
+  margin-right: 86px;
+  border-radius: 10px;
 }
 .login100-form-title {
-  font-size: 30px;
-  font-family: Poppins, sans-serif;
-  color: #403866;
+
+  padding-bottom: 90px;
+  font-family: Silka;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 60px;
+  color: #102352;
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
   width: 100%;
-  display: block;
+  display: flex;
 }
 .error-header {
   font-size: 80px;
@@ -231,6 +270,7 @@
 .container-login100-form-btn {
   width: 100%;
   display: flex;
+  padding-top: 85px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -240,14 +280,15 @@
   align-items: center;
   padding: 0 20px;
   width: 100%;
-  height: 50px;
+  height: 80px;
   border-radius: 10px;
-  background: #6675df;
-  font-family: Poppins, sans-serif;
-  font-size: 12px;
-  color: #fff;
-  line-height: 1.2;
-  text-transform: uppercase;
+  background: #2C61E4;
+  font-family: Silka;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 149.3%;
+  color: #FFFFFF;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.4s;

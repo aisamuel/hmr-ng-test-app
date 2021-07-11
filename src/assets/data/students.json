@@ -1,0 +1,66 @@
+[
+  {
+    "id": "001",
+    "img": "assets/images/user/ralph.png",
+    "name": "Ralph Edwards",
+    "gender": "Male",
+    "age": "45",
+    "phone": "+234 (0) 813409858",
+    "address": "3517 W. Gray St. Utica"
+  },
+  {
+    "id": "002",
+    "img": "assets/images/user/arlene.png",
+    "name": "Arlene McCoy",
+    "gender": "Female",
+    "age": "59",
+    "phone": "+234 (0) 004350988",
+    "address": "2118 Thonridge Cir. Sy"
+  },
+  {
+    "id": "003",
+    "img": "assets/images/user/jerome.png",
+    "name": "Jerome Bell",
+    "gender": "Male",
+    "age": "45",
+    "phone": "+234 (0) 813099000",
+    "address": "4817 Washington Avenue"
+  },
+  {
+    "id": "004",
+    "img": "assets/images/user/wade.png",
+    "name": "Wade Warren",
+    "gender": "Female",
+    "age": "59",
+    "phone": "+234 (0) 000084358",
+    "address": "8558 Green Rd..."
+  },
+  {
+    "id": "005",
+    "img": "assets/images/user/courtney.png",
+    "name": "Courtney Henry",
+    "gender": "Male",
+    "age": "45",
+    "phone": "+234 (0) 813008800",
+    "address": "3605 Parker Rd..."
+  },
+  {
+    "id": "006",
+    "img": "assets/images/user/devon.png",
+    "name": "Devone Lane",
+    "gender": "Female",
+    "age": "59",
+    "phone": "+234 (0) 000047635",
+    "address": "3890 Roplar Dr..."
+  },
+  {
+    "id": "007",
+    "img": "assets/images/user/theresa.png",
+    "name": "Theresa Webb",
+    "gender": "Male",
+    "age": "45",
+    "phone": "+234 (0) 813007600",
+    "address": "8080 Railroad St..."
+  }
+  
+]
